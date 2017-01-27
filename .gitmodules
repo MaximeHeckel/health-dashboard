@@ -1,0 +1,3 @@
+[submodule "go/src/server/vendor/gopkg.in/mgo.v2"]
+    path = go/src/server/vendor/gopkg.in/mgo.v2
+    url = http://gopkg.in/mgo.v2
