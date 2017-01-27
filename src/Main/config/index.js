@@ -97,6 +97,7 @@ export const query = `query HealthData (
       }
     SleepAnalysisDate2: SleepAnalysis(date: $date2)
       {
+        endDate,
         startDate,
         value,
       }
