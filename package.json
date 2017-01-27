@@ -1,6 +1,6 @@
 {
   "name": "healthDashboard",
-  "version": "0.1",
+  "version": "0.1.5",
   "description": "Personal health dashboard",
   "main": "webpack.config.js",
   "scripts": {
