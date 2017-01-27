@@ -27,7 +27,7 @@ $screen-sm: 600px;
 @custom-media --lt-sm (width <= $screen-sm);
 @custom-media --gt-sm (width > $screen-sm);
 
-$screen-md: 960px;
+$screen-md: 700px;
 
 @custom-media --md ( $screen-sm < width <= $screen-md);
 @custom-media --lt-md (width <= $screen-md);

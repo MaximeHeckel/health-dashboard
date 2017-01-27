@@ -77,18 +77,35 @@ i {
   flex-grow: 1;
 }
 
-@media (--xs) {
-
-}
-
-@media (--gt-xs) {
-
-}
-
 @media (--lt-md) {
+  .mainHeader {
+    height: 600px;
+  }
 
-}
+  .titleSection {
+    text-align: center;
+  }
 
-@media (--gt-md) {
+  .sectionTop {
+    margin-left: $space-md;
+  }
 
+  .dataRow {
+    display: block;
+  }
+
+  .dataItem {
+    display: inline-block;
+    margin-top: $space-md;
+    margin-right: $space-sm;
+    margin-left: $space-sm;
+  }
+
+  .hrDataRow {
+    margin: 0 auto;
+  }
+
+  .wideSection {
+    width: 90%;
+  }
 }

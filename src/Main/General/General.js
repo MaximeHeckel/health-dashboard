@@ -205,7 +205,7 @@ class General extends Component {
       <div id="main-layout">
         <div className={css.mainHeader}>
           <div className={css.wrapper}>
-            <div>
+            <div className={css.titleSection}>
               <div className={css.mainTitle}>
                 Health Dashboard
               </div>
@@ -221,32 +221,34 @@ class General extends Component {
               </div>
             </div>
             <div className={css.section}>
-              <div className={css.sectionTitle}>
-                {params.date === 'today' ?
-                  'Today\'s data' : 'Detailed data'
-                }
-              </div>
-              <div className={css.emphasize}>
-                {params.date === 'today' ?
-                  today : moment(params.date).format('LL')
-                }
-                <span className={css.buttonWrapper}>
-                  <div
-                    className={css.buttons}
-                    onClick={() => this.goToPreviousDay()}
-                  >
-                    Previous
-                  </div>
-                  <div
-                    className={css.buttons}
-                    onClick={() => this.goToNextDay()}
-                  >
-                    Next
-                  </div>
-                </span>
+              <div className={css.sectionTop} >
+                <div className={css.sectionTitle}>
+                  {params.date === 'today' ?
+                    'Today\'s data' : 'Detailed data'
+                  }
+                </div>
+                <div className={css.emphasize}>
+                  {params.date === 'today' ?
+                    today : moment(params.date).format('LL')
+                  }
+                  <span className={css.buttonWrapper}>
+                    <div
+                      className={css.buttons}
+                      onClick={() => this.goToPreviousDay()}
+                    >
+                      Previous
+                    </div>
+                    <div
+                      className={css.buttons}
+                      onClick={() => this.goToNextDay()}
+                    >
+                      Next
+                    </div>
+                  </span>
+                </div>
               </div>
               <div className={css.dataRow}>
-                <div className={css.dataItem}>
+                <div className={`${css.dataItem} ${css.wideSection}`}>
                   <DailyHeartRate
                     data={HeartRate}
                     min={MinMaxHeartRate.min}
@@ -284,17 +286,19 @@ class General extends Component {
         <div>
           <div className={css.wrapper}>
             <div className={css.section}>
-              <div className={css.sectionTitle}>
-                Weekly data
-              </div>
-              <div className={css.emphasize}>
-                {params.date === 'today' ?
-                  `${moment().add(-6, 'days').format('LL')}
-                  – ${today}`
-                  :
-                  `${moment(params.date).add(-6, 'days').format('LL')}
-                  – ${moment(params.date).format('LL')}`
-                }
+              <div className={css.sectionTop} >
+                <div className={css.sectionTitle}>
+                  Weekly data
+                </div>
+                <div className={css.emphasize}>
+                  {params.date === 'today' ?
+                    `${moment().add(-6, 'days').format('LL')}
+                    – ${today}`
+                    :
+                    `${moment(params.date).add(-6, 'days').format('LL')}
+                    – ${moment(params.date).format('LL')}`
+                  }
+                </div>
               </div>
               <div className={`${css.dataRow} ${css.graphRow}`}>
                 <div className={css.dataItem}>

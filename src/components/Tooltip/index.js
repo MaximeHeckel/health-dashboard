@@ -12,8 +12,8 @@ const CustomTooltip = ({ payload }) => {
             {payload[0].value} {payload[0].unit}
           </div>
           <div>
-            {payload[1] ? payload[1].value : null}
-            {payload[1] ? payload[1].unit : null}
+            {`${payload[1] ? payload[1].value : ''}
+            ${payload[1] ? payload[1].unit : ''}`}
           </div>
         </div>
       </div>
