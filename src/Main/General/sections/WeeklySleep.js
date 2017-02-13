@@ -5,7 +5,7 @@ import {
   Bar,
   YAxis,
   Tooltip,
-} from 'Recharts';
+} from 'recharts';
 import forEach from 'lodash/forEach';
 import CustomTooltip from '../../../components/Tooltip';
 import BarShape from '../../../components/BarShape';

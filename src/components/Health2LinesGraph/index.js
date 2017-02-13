@@ -4,7 +4,7 @@ import {
   Line,
   Tooltip,
   YAxis,
-} from 'Recharts';
+} from 'recharts';
 import CustomTooltip from '../../components/Tooltip';
 
 const Health2LinesGraph = ({

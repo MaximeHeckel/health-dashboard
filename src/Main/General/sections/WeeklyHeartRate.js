@@ -4,7 +4,7 @@ import {
   Bar,
   YAxis,
   Tooltip,
-} from 'Recharts';
+} from 'recharts';
 import CustomTooltip from '../../../components/Tooltip';
 import BarShape from '../../../components/BarShape';
 import css from './styles.css';

@@ -6,7 +6,7 @@ import {
   LineChart,
   Line,
   YAxis,
-} from 'Recharts';
+} from 'recharts';
 
 class DailyHeartRate extends Component {
   static propTypes = {
