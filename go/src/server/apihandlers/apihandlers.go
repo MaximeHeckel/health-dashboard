@@ -34,7 +34,10 @@ func calcMinMaxDailyHeartRate(data health.Data) health.MinMaxStruct {
 			max = entry.Value
 		}
 	}
-	result.StartDate = data.HeartRate[0].StartDate
+
+	if len(data.HeartRate) > 0 {
+		result.StartDate = data.HeartRate[0].StartDate
+	}
 	result.Min = min
 	result.Max = max
 	return result
