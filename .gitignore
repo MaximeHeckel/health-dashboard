@@ -3,3 +3,4 @@ node_modules
 dist
 go/.cache
 server
+.vscode
