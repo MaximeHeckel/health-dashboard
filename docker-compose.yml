@@ -1,10 +1,8 @@
-version: '2'
+version: '3'
 
 services:
   healthdashboard:
     image: maximeheckel/healthdashboard:latest
-    environment:
-      - ENV=PROD
     links:
       - "mongodb"
     ports:

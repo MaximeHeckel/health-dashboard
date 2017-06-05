@@ -21,13 +21,11 @@ type HTTPError struct {
 }
 
 func setMongoAddress() string {
-	MONGOCLIENTADDRESS = "192.168.99.100:27017"
+	MONGOCLIENTADDRESS = "mongodb:27017"
 	if len(os.Getenv("MONGODB_PORT_27017_TCP_ADDR")) != 0 && len(os.Getenv("MONGODB_PORT_28017_TCP_PORT")) != 0 {
 		MONGOCLIENTADDRESS = os.Getenv("MONGODB_PORT_27017_TCP_ADDR") + ":" + os.Getenv("MONGODB_PORT_28017_TCP_PORT")
 	}
-	if os.Getenv("ENV") == "PROD" {
-		MONGOCLIENTADDRESS = "mongodb:27017"
-	}
+
 	return MONGOCLIENTADDRESS
 }
 

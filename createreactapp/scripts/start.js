@@ -31,6 +31,8 @@ const paths = require('../config/paths');
 const config = require('../config/webpack.config.dev');
 const createDevServerConfig = require('../config/webpackDevServer.config');
 
+const exec = require('child_process').exec;
+
 const useYarn = fs.existsSync(paths.yarnLockFile);
 const isInteractive = process.stdout.isTTY;
 
@@ -42,6 +44,23 @@ if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
 // Tools like Cloud9 rely on this.
 const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 3000;
 const HOST = process.env.HOST || '0.0.0.0';
+
+const cmd = 'go run -v ../go/src/server/main.go -entry=./index.html -static=./'
+
+console.log('Starting Go server')
+const runServer = exec(cmd);
+
+runServer.stdout.on( 'data', data => {
+    console.log( `${data}` );
+});
+
+runServer.stderr.on( 'data', data => {
+    console.log( `${data}` );
+});
+
+runServer.on( 'close', code => {
+    console.log( `child process exited with code ${code}` );
+});
 
 // We attempt to use the default port but if it is busy, we offer the user to
 // run on a different port. `detect()` Promise resolves to the next free port.

@@ -11,24 +11,6 @@ import Main from './Main';
 
 const store = configureStore();
 
-
-/**
- * 
- * const rootRoute = {
-  childRoutes: [{
-    path: '/',
-    component: 'div',
-    indexRoute: { onEnter(nextState, replace) {
-      replace('/entry');
-    },
-    },
-    childRoutes: [
-      Main,
-    ],
-  }],
-};
- */
-
 ReactDOM.render(
   <ApolloProvider store={store} client={client}>
     <Router>

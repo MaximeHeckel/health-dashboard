@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types'; 
 import { connect } from 'react-redux';
 import { graphql } from 'react-apollo';
 import { withRouter } from 'react-router-dom';
@@ -22,32 +23,32 @@ const healthQuery =
   gql`${query}`;
 
 @withRouter
-/*@graphql(healthQuery, {
+@graphql(healthQuery, {
   options: props => ({
     variables: {
-      date: props.params.date === 'today' ?
-        moment().format('YYYYMMDD') : props.params.date,
-      date1: props.params.date === 'today'
+      date: props.match.params.date === 'today' ?
+        moment().format('YYYYMMDD') : props.match.params.date,
+      date1: props.match.params.date === 'today'
         ? moment().add(-1, 'days').format('YYYYMMDD') :
-        moment(props.params.date).add(-1, 'days').format('YYYYMMDD'),
-      date2: props.params.date === 'today'
+        moment(props.match.params.date).add(-1, 'days').format('YYYYMMDD'),
+      date2: props.match.params.date === 'today'
         ? moment().add(-2, 'days').format('YYYYMMDD') :
-        moment(props.params.date).add(-2, 'days').format('YYYYMMDD'),
-      date3: props.params.date === 'today'
+        moment(props.match.params.date).add(-2, 'days').format('YYYYMMDD'),
+      date3: props.match.params.date === 'today'
         ? moment().add(-3, 'days').format('YYYYMMDD') :
-        moment(props.params.date).add(-3, 'days').format('YYYYMMDD'),
-      date4: props.params.date === 'today'
+        moment(props.match.params.date).add(-3, 'days').format('YYYYMMDD'),
+      date4: props.match.params.date === 'today'
         ? moment().add(-4, 'days').format('YYYYMMDD') :
-        moment(props.params.date).add(-4, 'days').format('YYYYMMDD'),
-      date5: props.params.date === 'today'
+        moment(props.match.params.date).add(-4, 'days').format('YYYYMMDD'),
+      date5: props.match.params.date === 'today'
         ? moment().add(-5, 'days').format('YYYYMMDD') :
-        moment(props.params.date).add(-5, 'days').format('YYYYMMDD'),
-      date6: props.params.date === 'today'
+        moment(props.match.params.date).add(-5, 'days').format('YYYYMMDD'),
+      date6: props.match.params.date === 'today'
         ? moment().add(-6, 'days').format('YYYYMMDD') :
-        moment(props.params.date).add(-6, 'days').format('YYYYMMDD'),
+        moment(props.match.params.date).add(-6, 'days').format('YYYYMMDD'),
     },
   }),
-})*/
+})
 class General extends Component {
   static propTypes = {
     dispatch: PropTypes.func,
@@ -73,17 +74,17 @@ class General extends Component {
   }
 
   goToPreviousDay() {
-    const previousDate = this.props.params.date === 'today' ?
+    const previousDate = this.props.match.params.date === 'today' ?
             moment().add(-1, 'days').format('YYYYMMDD') :
-            moment(this.props.params.date).add(-1, 'days').format('YYYYMMDD');
-    this.props.router
+            moment(this.props.match.params.date).add(-1, 'days').format('YYYYMMDD');
+    this.props.history
       .push(`/entry/${previousDate}`);
   }
 
   goToNextDay() {
-    const nextDate = this.props.params.date === 'today' ?
+    const nextDate = this.props.match.params.date === 'today' ?
             moment().add(1, 'days').format('YYYYMMDD') :
-            moment(this.props.params.date).add(1, 'days').format('YYYYMMDD');
+            moment(this.props.match.params.date).add(1, 'days').format('YYYYMMDD');
     this.props.history
       .push(`/entry/${nextDate}`);
   }

@@ -21,7 +21,7 @@ func main() {
 	var port string
 
 	flag.StringVar(&entry, "entry", "./index.html", "the entrypoint to serve.")
-	flag.StringVar(&static, "static", ".", "the directory to serve static files from.")
+	flag.StringVar(&static, "static", "./", "the directory to serve static files from.")
 	flag.StringVar(&port, "port", "8000", "the `port` to listen on.")
 	flag.Parse()
 
@@ -37,7 +37,7 @@ func main() {
 	r.Path("/api/v1/healthhook").HandlerFunc(apihandlers.HealthHandler)
 	r.Path("/api/v1/health/graphql").Handler(h)
 	r.NotFoundHandler = http.HandlerFunc(apihandlers.NotFound)
-	r.PathPrefix("/dist").Handler(http.FileServer(http.Dir(static)))
+	r.PathPrefix("/static").Handler(http.FileServer(http.Dir(static)))
 	r.PathPrefix("/").HandlerFunc(apihandlers.IndexHandler(entry))
 
 	c := cors.New(cors.Options{

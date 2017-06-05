@@ -1,6 +1,9 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types'; 
 import moment from 'moment';
 import forEach from 'lodash/forEach';
+import cloneDeep from 'lodash/cloneDeep';
+import reverse from 'lodash/reverse';
 import css from './styles.css';
 import {
   LineChart,
@@ -45,9 +48,8 @@ class DailyHeartRate extends Component {
       min,
       max,
     } = this.props;
-
-    const hrData = this.normalizeData(data.reverse());
-
+    const copiedData = cloneDeep(data);
+    const hrData = this.normalizeData(reverse(copiedData));
     return (
       <div className={css.graphWrapper}>
         <div>
@@ -58,7 +60,7 @@ class DailyHeartRate extends Component {
             margin={{ left: 0 }}
           >
             <Line
-              type="basis"
+              type="monotone"
               dataKey="value"
               stroke="#F52A64"
               strokeWidth="3"
