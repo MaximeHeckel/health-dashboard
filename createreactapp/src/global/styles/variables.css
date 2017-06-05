@@ -1,0 +1,82 @@
+/* COLORS */
+$color-white: #FFFFFF;
+$color-black: #212222;
+$color-tuna: #4A4B4D;
+$color-metal-blue-clear: #4362CB;
+$color-metal-blue-dark: #16275E;
+$color-data-green: #30E2DD;
+$color-data-blue: #24B9F0;
+$color-data-violet: #AEBDFC;
+$color-data-red: #F52A64;
+$color-data-orange:	#FF9D13;
+$color-data-yellow: #FDC62E;
+
+$color-grey: #F6F5FA;
+
+/* SCREEN SIZES */
+
+/* media queries */
+$screen-xs: 480px;
+
+@custom-media --xs (width <= $screen-xs);
+@custom-media --gt-xs (width > $screen-xs);
+
+$screen-sm: 600px;
+
+@custom-media --sm ( $screen-xs < width <= $screen-sm);
+@custom-media --lt-sm (width <= $screen-sm);
+@custom-media --gt-sm (width > $screen-sm);
+
+$screen-md: 700px;
+
+@custom-media --md ( $screen-sm < width <= $screen-md);
+@custom-media --lt-md (width <= $screen-md);
+@custom-media --gt-md (width > $screen-md);
+
+$screen-lg: 1300px;
+
+@custom-media --lg ( $screen-md < width <= $screen-lg);
+@custom-media --lt-lg (width <= $screen-lg);
+@custom-media --gt-lg (width > $screen-lg);
+
+$screen-xl: 1500px;
+
+@custom-media --lt-xl (width <= $screen-xl);
+@custom-media --xl (width > $screen-xl);
+
+/* SPACING */
+
+$space-xxs: 4px;
+$space-xs: 8px;
+$space-sm: 12px;
+$space-md: 16px;
+$space-lg: 20px;
+$space-xl: 24px;
+$space-xxl: 32px;
+$space-xxxl: 40px;
+$space-xxxxl: 48px;
+$space-xxxxxl: 56px;
+
+/* RADIUS */
+
+$border-radius-default: 3px;
+
+/* FONTS */
+
+$font-size-text: 12px;
+$line-height-text: 17px;
+
+$font-size-button: 12px;
+
+$font-size-subtitle-small: 16px;
+$line-height-subtitle-small: 22px;
+
+$font-size-subtitle: 22px;
+$line-height-subtitle: 31px;
+
+$font-size-title-small: 30px;
+$line-height-headline: 42px;
+
+$font-size-title: 34px;
+$line-height-title: 48px;
+

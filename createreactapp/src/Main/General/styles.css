@@ -1,0 +1,111 @@
+@import "global/styles/utilities.css";
+
+html { 
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Helvetica';
+  padding: 0;
+  margin: 0;
+}
+
+i {
+  margin-left: $space-xxs;
+  margin-right: $space-xxs;
+}
+
+.mainHeader {
+  background-color: $color-grey;
+  height: 400px;
+}
+
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mainTitle {
+  color: $color-black;
+  font-size: $font-size-title;
+  line-height: $line-height-title;
+  font-weight: 700;
+  padding-top: 50px;
+}
+
+.subTitleBlock {
+  margin-top: $space-xxs;
+  color: $color-tuna;
+}
+
+.emphasize {
+  color: $color-metal-blue-clear;
+  font-weight: 700;
+}
+
+.buttonWrapper {
+  margin-left: $space-sm;
+}
+
+.buttons {
+  margin-right: $space-xs;
+  display: inline;
+  text-decoration: underline;
+  font-size: $font-size-text;
+  color: $color-tuna;
+  cursor: pointer;
+}
+
+.section {
+  margin-top: $space-xxxl;
+}
+
+.sectionTitle {
+  font-size: $font-size-subtitle-small;
+  font-weight: 700;
+}
+
+.dataRow {
+  display: flex;
+}
+
+.graphRow {
+  margin-top: $space-xxxl;
+}
+
+.dataItem {
+  flex-grow: 1;
+}
+
+@media (--lt-md) {
+  .mainHeader {
+    height: 600px;
+  }
+
+  .titleSection {
+    text-align: center;
+  }
+
+  .sectionTop {
+    margin-left: $space-md;
+  }
+
+  .dataRow {
+    display: block;
+  }
+
+  .dataItem {
+    display: inline-block;
+    margin-top: $space-md;
+    margin-right: $space-sm;
+    margin-left: $space-sm;
+  }
+
+  .hrDataRow {
+    margin: 0 auto;
+  }
+
+  .wideSection {
+    width: 90%;
+  }
+}

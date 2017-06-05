@@ -81,6 +81,8 @@ func HealthHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	log.Println(string(data))
+
 	err = json.Unmarshal(data, &healthSample)
 	if err != nil {
 		log.Errorf("Error while unmarshaling incoming health data: %s", err)

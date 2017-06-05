@@ -1,0 +1,13 @@
+@import "global/styles/utilities.css";
+
+.wrapper {
+  color: $color-white;
+  background-color: $color-black;
+  font-size: $font-size-text;
+  padding: $space-xs $space-sm;
+  border-radius: $border-radius-default;
+}
+
+.tooltipData {
+  margin-top: $space-sm;
+}

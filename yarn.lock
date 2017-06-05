@@ -1448,7 +1448,7 @@ d3-path@1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/d3-path/-/d3-path-1.0.3.tgz#60103d0dea9a6cd6ca58de86c6d56724002d3fde"
 
-d3-scale@^1.0.3:
+d3-scale@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/d3-scale/-/d3-scale-1.0.4.tgz#50e28bf6a193b706745528515ed9b3d44205a033"
   dependencies:
@@ -1460,7 +1460,7 @@ d3-scale@^1.0.3:
     d3-time "1"
     d3-time-format "2"
 
-d3-shape@^1.0.3:
+d3-shape@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/d3-shape/-/d3-shape-1.0.4.tgz#145ee100ccbec42f8e3f1996cd05c786f79fe1c6"
   dependencies:
@@ -2953,7 +2953,7 @@ lodash.words@^3.0.0:
   dependencies:
     lodash._root "^3.0.0"
 
-lodash@^4.0.0, lodash@^4.13.1, lodash@^4.16.2, lodash@^4.16.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
+lodash@^4.0.0, lodash@^4.13.1, lodash@^4.16.2, lodash@^4.16.4, lodash@^4.17.2, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
   version "4.17.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.2.tgz#34a3055babe04ce42467b607d700072c7ff6bf42"
 
@@ -4101,15 +4101,15 @@ recharts-scale@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/recharts-scale/-/recharts-scale-0.2.1.tgz#378f543ed17c3245e4d9afb10aaf6298240d2fcb"
 
-recharts@^0.19.0:
-  version "0.19.0"
-  resolved "https://registry.yarnpkg.com/recharts/-/recharts-0.19.0.tgz#228ac3558a60c48a14f54f087baafdb5d856398a"
+recharts@^0.19.1:
+  version "0.19.1"
+  resolved "https://registry.yarnpkg.com/recharts/-/recharts-0.19.1.tgz#7b23e63e1f6e905e139dde7e4e91eea863fd448d"
   dependencies:
     classnames "^2.2.5"
     core-js "^2.4.1"
-    d3-scale "^1.0.3"
-    d3-shape "^1.0.3"
-    lodash "^4.16.4"
+    d3-scale "^1.0.4"
+    d3-shape "^1.0.4"
+    lodash "^4.17.2"
     react-resize-detector "^0.3.3"
     react-smooth "^0.1.15"
     recharts-scale "^0.2.1"
