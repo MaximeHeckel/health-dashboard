@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types'; 
 
 const BarShape = (props) => {
   const { fill, x, y, width, height, coeffHeight } = props;

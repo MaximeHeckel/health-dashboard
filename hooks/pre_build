@@ -1,3 +1,0 @@
-#!/bin/bash
-docker run --rm -v $(pwd):/go/src/github.com/MaximeHeckel/healthDashboard/ -w /go/src/github.com/MaximeHeckel/healthDashboard/go/src/server golang:latest bash -c "CGO_ENABLED=0 GOOS=linux go build -ldflags '-s' -a -installsuffix cgo -v -o ../../../server"
-docker run --rm -v $(pwd):/app -w /app node:5-slim /bin/bash -c "npm i -g yarn && yarn install --ignore-engines && npm run build:frontend"

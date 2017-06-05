@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types'; 
 import {
   BarChart,
   Bar,
@@ -33,7 +34,7 @@ const WeeklyHeartRate = ({ dataHR = [] }) => {
             stackId="a"
             fill="#F52A64"
             barSize={8}
-            fillOpacity="0"
+            fillOpacity={0}
           />
           <Tooltip content={<CustomTooltip />} />
         </BarChart>

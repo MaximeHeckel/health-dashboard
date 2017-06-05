@@ -1,14 +1,13 @@
-import React, { PropTypes } from 'react';
-import clone from 'lodash/clone';
+import React from 'react';
+import PropTypes from 'prop-types'; 
 import forEach from 'lodash/forEach';
 import Health2LinesGraph from '../../../components/Health2LinesGraph';
 import css from './styles.css';
 
 const WeeklySteps = ({ dataSteps = [], dataCycling = [] }) => {
-  const data = clone(dataSteps);
-  const weeklyData =
-  forEach(data, (entry, i) => {
-    data[i].valueCycling = dataCycling[i].value / 1000;
+  const weeklyData = [];
+  forEach(dataSteps, (entry, i) => {
+    weeklyData.push({ valueWalking: dataSteps[i].value, valueCycling: dataCycling[i].value / 1000 });
   });
 
   return (
@@ -16,7 +15,7 @@ const WeeklySteps = ({ dataSteps = [], dataCycling = [] }) => {
       <div className={css.graphWrapper}>
         <Health2LinesGraph
           data={weeklyData}
-          value1="value"
+          value1="valueWalking"
           value2="valueCycling"
           color1="#24B9F0"
           color2="#30E2DD"

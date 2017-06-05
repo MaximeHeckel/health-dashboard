@@ -11,7 +11,7 @@ class Main extends Component {
     const { children, ...attributes } = this.props;
     return (
       <div id="module-main" {...attributes}>
-        { children }
+        HELLO
       </div>
     );
   }

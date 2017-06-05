@@ -1,4 +1,4 @@
-@import "../../../global/styles/utilities.css";
+@import "global/styles/utilities.css";
 
 .wrapper {
   color: $color-white;

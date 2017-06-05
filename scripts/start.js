@@ -45,7 +45,7 @@ if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
 const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 3000;
 const HOST = process.env.HOST || '0.0.0.0';
 
-const cmd = 'go run -v ../go/src/server/main.go -entry=./index.html -static=./'
+const cmd = 'go run -v go/src/server/main.go -entry=./index.html -static=./'
 
 console.log('Starting Go server')
 const runServer = exec(cmd);

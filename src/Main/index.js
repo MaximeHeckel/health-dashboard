@@ -1,10 +1,18 @@
+import React from 'react';
+import {
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 import General from './General';
 
-export default {
-  path: '/entry',
-  component: require('./Main').default,
-  indexRoute: { onEnter: (nextState, replace) => replace('/entry/today') },
-  childRoutes: [
-    General,
-  ],
-};
+const Main = () => {
+  return (
+    <Switch>
+      <Route path="/entry/:date" component={General}/>
+      <Redirect from="/" to="/entry/today"/>
+    </Switch>
+  );
+}
+
+export default Main;
