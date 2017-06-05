@@ -185,6 +185,8 @@ module.exports = {
                   loader: require.resolve('css-loader'),
                   options: {
                     importLoaders: 1,
+                    modules: true,
+                    localIdentName: '[hash:base64:5]',
                     minimize: true,
                     sourceMap: true,
                   },
@@ -194,6 +196,14 @@ module.exports = {
                   options: {
                     ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
                     plugins: () => [
+                      require('postcss-import')({
+                        path: ['node_modules', './src'],
+                      }),
+                      require('postcss-simple-vars'),
+                      require('postcss-custom-media'),
+                      require('postcss-nested'),
+                      require('postcss-media-minmax'),
+                      require('postcss-flexbugs-fixes'),
                       require('postcss-flexbugs-fixes'),
                       autoprefixer({
                         browsers: [
