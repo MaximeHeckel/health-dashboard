@@ -248,7 +248,7 @@ class General extends Component {
                 </div>
               </div>
               <div className={css.dataRow}>
-                <div className={`${css.dataItem} ${css.wideSection}`}>
+                <div className={css.dataItem}>
                   <DailyHeartRate
                     data={HeartRate}
                     min={MinMaxHeartRate.min}
@@ -273,8 +273,6 @@ class General extends Component {
                   <DailyCycling
                     dataCycling={CyclingDistance}
                   />
-                </div>
-                <div className={css.dataItem}>
                   <DailySleep
                     dataSleep={SleepAnalysis}
                   />
@@ -282,8 +280,6 @@ class General extends Component {
               </div>
             </div>
           </div>
-        </div>
-        <div>
           <div className={css.wrapper}>
             <div className={css.section}>
               <div className={css.sectionTop} >

@@ -28,7 +28,7 @@ class DailySleep extends Component {
     const sleepTime = this.normalizeData(dataSleep);
 
     return (
-      <div className={css.stepDataWrapper}>
+      <div className={`${css.card} ${css.sleepCard}`}>
         <div className={css.centeredColumn}>
           <div className={css.sleepData}>
              {(sleepTime / 3600 / 1000).toFixed(2)} h

@@ -1,9 +1,49 @@
 @import "global/styles/utilities.css";
 
 .dataLabel {
-  color: $color-tuna;
+  color: $color-white;
   font-size: $font-size-text;
   font-weight: 700;
+}
+
+.card {
+  border-radius: 8px;
+}
+
+.heartCard {
+  width: 400px;
+  height: 175px;
+  box-shadow: 3px 5px 10px 0 rgba(0,0,0,0.16);
+  background-image: linear-gradient(90deg, #FCA9BF 0%, #FF4A6F 100%);
+}
+
+.weightCard {
+  width: 150px;
+  height: 175px;
+  box-shadow: 3px 5px 10px 0 rgba(0,0,0,0.16);
+  background-image: linear-gradient(90deg, #FEA6A4 0%, #FB6E6D 100%);
+}
+
+.stepCard {
+  width: 150px;
+  height: 175px;
+  box-shadow: 3px 5px 10px 0 rgba(0,0,0,0.16);
+  background-image: linear-gradient(90deg, #94D8FA 0%, #6C8CF3 100%);
+}
+
+.cyclingCard {
+  width: 150px;
+  height: 75px;
+  box-shadow: 3px 5px 10px 0 rgba(0,0,0,0.16);
+  background-image: linear-gradient(90deg, #AFF7F3 0%, #73E8F8 100%);
+}
+
+.sleepCard {
+  width: 150px;
+  height: 75px;
+  box-shadow: 3px 5px 10px 0 rgba(0,0,0,0.16);
+  background-image: linear-gradient(90deg, #7D88EB 0%,#4C52A7 100%);
+  margin-top: 25px;
 }
 
 .graphWrapper {
@@ -18,18 +58,18 @@
 .hrDataRow {
   display: flex;
   width: 375px;
-  margin-left: 25px;
+  margin-left: 8px;
 }
 
 .hrDataItem {
   flex-grow: 1;
   text-align: center;
-  color: $color-data-red;
+  color: $color-white;
   font-weight: 700;
 }
 
 .hrDataItem:not(:last-child) {
-  border-right: 1px solid $color-tuna;
+  border-right: 1px solid $color-white;
 }
 
 .stepDataWrapper {
@@ -42,45 +82,59 @@
   height: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
+  margin-left: 35px;
 }
 
 .stepData {
   font-weight: 700;
-  color: $color-data-blue;
+  color: $color-white;
   margin-bottom: $space-xs;
 }
 
 .distanceData {
   font-weight: 700;
-  color: $color-data-blue;
+  color: $color-white;
   margin-top: $space-xs;
 }
 
 .weightData {
   font-weight: 700;
-  color: $color-data-orange;
+  color: $color-white;
   margin-top: $space-xs;
   margin-bottom: $space-xs;
 }
 
 .bfData {
   font-weight: 700;
-  color: $color-data-yellow;
+  color: $color-white;
   margin-top: $space-xs;
   margin-bottom: $space-xs;
 }
 
 .cycleData {
   font-weight: 700;
-  color: $color-data-green;
+  color: $color-white;
   margin-top: $space-xs;
   margin-bottom: $space-xs;
 }
 
 .sleepData {
   font-weight: 700;
-  color: $color-data-violet;
+  color: $color-white;
   margin-top: $space-xs;
   margin-bottom: $space-xs;
+}
+
+@media (--lt-md) {
+  .heartCard {
+    width: 320px !important;
+    display: inline-block;
+  }
+
+  .hrDataRow {
+    display: flex;
+    width: 100%;
+    margin-left: 0px;
+  }
 }

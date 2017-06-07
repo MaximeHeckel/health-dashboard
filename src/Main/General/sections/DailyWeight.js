@@ -7,7 +7,7 @@ const DailyWeight = ({ dataWeight = {}, dataBmi = {}, dataBF = {} }) => {
   const { value: valueBmi } = dataBmi;
   const { value: valueBF } = dataBF;
   return (
-    <div className={css.stepDataWrapper}>
+    <div className={`${css.card} ${css.weightCard}`}>
       <div className={css.centeredColumn}>
         <div className={css.weightData}>
           { valueWeight / 1000 || 0 } kg

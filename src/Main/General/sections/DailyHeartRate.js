@@ -51,31 +51,33 @@ class DailyHeartRate extends Component {
     const copiedData = cloneDeep(data);
     const hrData = this.normalizeData(reverse(copiedData));
     return (
-      <div className={css.graphWrapper}>
-        <div>
-          <LineChart
-            width={400}
-            height={120}
-            data={hrData}
-            margin={{ left: 0 }}
-          >
-            <Line
-              type="monotone"
-              dataKey="value"
-              stroke="#F52A64"
-              strokeWidth="3"
-              dot={false}
-              unit="bpm"
-            />
-            <YAxis
-              unit="bpm"
-              type="number"
-              domain={[30, 200]}
-              axisLine={false}
-              tick={false}
-              tickLine={false}
-            />
-          </LineChart>
+      <div className={`${css.card} ${css.heartCard}`}>
+        <div className={css.graphWrapper}>
+          <div>
+            <LineChart
+              width={350}
+              height={120}
+              data={hrData}
+              margin={{ left: 0 }}
+            >
+              <Line
+                type="monotone"
+                dataKey="value"
+                stroke="#FFF"
+                strokeWidth="3"
+                dot={false}
+                unit="bpm"
+              />
+              <YAxis
+                unit="bpm"
+                type="number"
+                domain={[30, 200]}
+                axisLine={false}
+                tick={false}
+                tickLine={false}
+              />
+            </LineChart>
+          </div>
         </div>
         <div className={css.hrDataRow}>
           { today ?
@@ -83,7 +85,7 @@ class DailyHeartRate extends Component {
             <div className={css.hrDataItem}>
               {
                 `${data.length > 0 ? data[data.length - 1].value : 0}
-                 bpm `
+                bpm `
               }
               <div className={css.dataLabel}>Heart Rate</div>
             </div>

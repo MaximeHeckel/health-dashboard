@@ -16,7 +16,7 @@ i {
 }
 
 .mainHeader {
-  background-color: $color-grey;
+  box-shadow: 0 -2px 4px 0 rgba(0,0,0,0.15);
   height: 400px;
 }
 
@@ -39,8 +39,9 @@ i {
 }
 
 .emphasize {
-  color: $color-metal-blue-clear;
+  color: $color-black;
   font-weight: 700;
+  margin-bottom: $space-md;
 }
 
 .buttonWrapper {
@@ -79,11 +80,16 @@ i {
 
 @media (--lt-md) {
   .mainHeader {
-    height: 600px;
+    height: 900px;
+    box-shadow: none;
   }
 
   .titleSection {
     text-align: center;
+  }
+
+  .section {
+    margin-top: $space-xxxl;
   }
 
   .sectionTop {
@@ -92,20 +98,18 @@ i {
 
   .dataRow {
     display: block;
+    margin: $space-lg auto;
   }
 
   .dataItem {
     display: inline-block;
+    vertical-align: middle;
     margin-top: $space-md;
-    margin-right: $space-sm;
-    margin-left: $space-sm;
+    margin-right: $space-xxs;
+    margin-left: $space-xs;
   }
 
   .hrDataRow {
     margin: 0 auto;
-  }
-
-  .wideSection {
-    width: 90%;
   }
 }
