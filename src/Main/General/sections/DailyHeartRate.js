@@ -9,7 +9,10 @@ import {
   LineChart,
   Line,
   YAxis,
+  XAxis,
+  Tooltip,
 } from 'recharts';
+import CustomTooltip from '../../../components/Tooltip';
 
 class DailyHeartRate extends Component {
   static propTypes = {
@@ -20,7 +23,6 @@ class DailyHeartRate extends Component {
   }
 
   normalizeData(entries) {
-    const paddedData = new Array(150).fill({ value: NaN });
     const normalizedData = [];
 
     forEach(entries, (entry, i) => {
@@ -32,13 +34,11 @@ class DailyHeartRate extends Component {
         const dateb =
           moment(normalizedData[normalizedData.length - 1].startDate);
         if ((datea - dateb) / 1000 > 120) {
-          normalizedData.push(entry);
+          normalizedData.push({ startDate: new Date(entry.startDate).getTime(), value: entry.value });
         }
       }
     });
-    paddedData.splice
-      .apply(paddedData, [0, normalizedData.length].concat(normalizedData));
-    return paddedData;
+    return normalizedData;
   }
 
   render() {
@@ -50,12 +50,13 @@ class DailyHeartRate extends Component {
     } = this.props;
     const copiedData = cloneDeep(data);
     const hrData = this.normalizeData(reverse(copiedData));
+
     return (
       <div className={`${css.card} ${css.heartCard}`}>
         <div className={css.graphWrapper}>
           <div>
             <LineChart
-              width={350}
+              width={400}
               height={120}
               data={hrData}
               margin={{ left: 0 }}
@@ -68,6 +69,16 @@ class DailyHeartRate extends Component {
                 dot={false}
                 unit="bpm"
               />
+              <XAxis
+                scale="time"
+                type="number"
+                dataKey="startDate"
+                axisLine={false}
+                tick={false}
+                tickLine={false}
+                domain={['dataMin', 'dataMax']}
+              />
+              <Tooltip content={<CustomTooltip />} />
               <YAxis
                 unit="bpm"
                 type="number"
