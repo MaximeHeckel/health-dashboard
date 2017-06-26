@@ -33,8 +33,8 @@ class DailyHeartRate extends Component {
           moment(entry.startDate);
         const dateb =
           moment(normalizedData[normalizedData.length - 1].startDate);
-        if ((datea - dateb) / 1000 > 120) {
-          normalizedData.push({ startDate: new Date(entry.startDate).getTime(), value: entry.value });
+        if ((datea - dateb) / 1000 > 60) {
+          normalizedData.push({ startDate: moment(entry.startDate).toDate().getTime(), value: entry.value });
         }
       }
     });
@@ -56,7 +56,7 @@ class DailyHeartRate extends Component {
         <div className={css.graphWrapper}>
           <div>
             <LineChart
-              width={400}
+              width={350}
               height={120}
               data={hrData}
               margin={{ left: 0 }}

@@ -47,7 +47,7 @@
 }
 
 .graphWrapper {
-  margin-left: -45px;
+  margin-left: -25px;
 }
 
 .graphFooter {
@@ -128,7 +128,7 @@
 
 @media (--lt-md) {
   .heartCard {
-    width: 320px !important;
+    width: 350px !important;
     display: inline-block;
   }
 
