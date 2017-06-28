@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+  healthdashboard-dev:
+    build:
+      context: .
+      dockerfile: ./dev.Dockerfile
+    environment:
+      NODE_ENV: 'development'
+      SERVER_PATH: '/go/src/github.com/MaximeHeckel/healthDashboard/'
+    command: yarn start
+    volumes:
+      - .:/app/
+    links:
+      - 'mongodb'
+    ports:
+      - '8000:8000'
+      - '3000:3000'
+  mongodb:
+    image: mongo:3.0
