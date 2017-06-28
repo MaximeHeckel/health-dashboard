@@ -1,11 +1,12 @@
-version: '3'
+version: '3.1'
 
 services:
   healthdashboard:
-    image: maximeheckel/healthdashboard:latest
+    build:
+      context: .
     links:
-      - "mongodb"
+      - 'mongodb'
     ports:
-      - "8000:8000"
+      - '8000:8000'
   mongodb:
     image: mongo:3.0
