@@ -119,7 +119,7 @@ If you want to contribute to the development of this project here's how you can 
 
 ### With Docker and Compose
 1. You'll need at least Docker 17.05
-2. Run `docker-compose -f docker-compose.dev.yml up --build --force-recreate`
+2. Run `docker-compose -f docker-compose.dev.yml up --build --force-recreate`. This will start the Golang server under [http://localhost:8000]() and the Webpack dev server for the frontend under [http://localhost:3000]() in a container as well as the mongo container linked to the previous one.
 
 Every change in the frontend code is hot reloaded.
 For backend changes you will need to manually restart the Go server.
