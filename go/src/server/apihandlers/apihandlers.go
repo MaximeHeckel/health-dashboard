@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/MaximeHeckel/healthDashboard/go/src/server/auth"
-	"github.com/MaximeHeckel/healthDashboard/go/src/server/health"
-	"github.com/MaximeHeckel/healthDashboard/go/src/server/utils"
+	"github.com/MaximeHeckel/health-dashboard/go/src/server/auth"
+	"github.com/MaximeHeckel/health-dashboard/go/src/server/health"
+	"github.com/MaximeHeckel/health-dashboard/go/src/server/utils"
 	log "github.com/Sirupsen/logrus"
 	"gopkg.in/mgo.v2/bson"
 	"gopkg.in/oleiade/reflections.v1"

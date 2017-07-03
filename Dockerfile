@@ -1,7 +1,7 @@
 FROM golang:latest as serverbuilder
 
-ADD ./go /go/src/github.com/MaximeHeckel/healthDashboard/go/
-WORKDIR /go/src/github.com/MaximeHeckel/healthDashboard/go/src/server
+ADD ./go /go/src/github.com/MaximeHeckel/health-dashboard/go/
+WORKDIR /go/src/github.com/MaximeHeckel/health-dashboard/go/src/server
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags '-s' -a -installsuffix cgo -v -o server
 
 ###################################
@@ -25,7 +25,7 @@ RUN yarn build
 
 FROM alpine:latest
 
-COPY --from=serverbuilder /go/src/github.com/MaximeHeckel/healthDashboard/go/src/server/server ./app/
+COPY --from=serverbuilder /go/src/github.com/MaximeHeckel/health-dashboard/go/src/server/server ./app/
 COPY --from=appbuilder /app/build/index.html ./app/
 COPY --from=appbuilder /app/build/manifest.json ./app/
 COPY --from=appbuilder /app/build/asset-manifest.json ./app/

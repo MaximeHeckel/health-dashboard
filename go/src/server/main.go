@@ -1,12 +1,12 @@
-package main //import "github.com/MaximeHeckel/healthDashboard/go/src/server"
+package main //import "github.com/MaximeHeckel/health-dashboard/go/src/server"
 
 import (
 	"flag"
 	"net/http"
 
-	"github.com/MaximeHeckel/healthDashboard/go/src/server/apihandlers"
-	"github.com/MaximeHeckel/healthDashboard/go/src/server/healthgraphql"
-	"github.com/MaximeHeckel/healthDashboard/go/src/server/utils"
+	"github.com/MaximeHeckel/health-dashboard/go/src/server/apihandlers"
+	"github.com/MaximeHeckel/health-dashboard/go/src/server/healthgraphql"
+	"github.com/MaximeHeckel/health-dashboard/go/src/server/utils"
 	log "github.com/Sirupsen/logrus"
 	"github.com/gorilla/mux"
 	"github.com/graphql-go/handler"

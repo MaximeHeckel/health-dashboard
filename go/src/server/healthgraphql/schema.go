@@ -1,8 +1,8 @@
 package healthgraphql
 
 import (
-	"github.com/MaximeHeckel/healthDashboard/go/src/server/apihandlers"
-	"github.com/MaximeHeckel/healthDashboard/go/src/server/health"
+	"github.com/MaximeHeckel/health-dashboard/go/src/server/apihandlers"
+	"github.com/MaximeHeckel/health-dashboard/go/src/server/health"
 	"github.com/graphql-go/graphql"
 )
 
