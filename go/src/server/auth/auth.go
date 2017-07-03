@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/MaximeHeckel/healthDashboard/go/src/server/utils"
+	"github.com/MaximeHeckel/health-dashboard/go/src/server/utils"
 )
 
 // CheckAuth basic authentication
