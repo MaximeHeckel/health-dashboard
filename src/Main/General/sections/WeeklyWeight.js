@@ -7,11 +7,11 @@ import css from './styles.css';
 const WeeklyWeight = ({ dataWeight = [], dataBF = [] }) => {
   const weeklyData = [];
   forEach(dataWeight, (entry, i) => {
-    weeklyData.push({ valueWeight: dataWeight[i].value / 1000, valueBF: dataBF[i].value });
+    weeklyData.push({ startDate: dataWeight[i].startDate, valueWeight: dataWeight[i].value / 1000, valueBF: dataBF[i].value });
   });
 
   return (
-    <div>
+    <div className={`${css.card} ${css.heartCard}`}>
       <div className={css.graphWrapper}>
         <Health2LinesGraph
           data={weeklyData}
@@ -21,8 +21,8 @@ const WeeklyWeight = ({ dataWeight = [], dataBF = [] }) => {
           color2="#FDC62E"
           unit1="kg"
           unit2="% of bodyfat"
-          domain1={[55, 85]}
-          domain2={[0, 30]}
+          domain1={[60, 75]}
+          domain2={[5, 15]}
           width={400}
           height={120}
         />
@@ -30,7 +30,6 @@ const WeeklyWeight = ({ dataWeight = [], dataBF = [] }) => {
       <div className={css.graphFooter}>
         <div className={css.dataLabel}>
           Weekly weight and bodyfat percentage
-          <span><hr /></span>
         </div>
       </div>
     </div>

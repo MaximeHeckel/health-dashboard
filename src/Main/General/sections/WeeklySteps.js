@@ -7,11 +7,11 @@ import css from './styles.css';
 const WeeklySteps = ({ dataSteps = [], dataCycling = [] }) => {
   const weeklyData = [];
   forEach(dataSteps, (entry, i) => {
-    weeklyData.push({ valueWalking: dataSteps[i].value, valueCycling: dataCycling[i].value / 1000 });
+    weeklyData.push({ startDate: dataSteps[i].startDate, valueWalking: dataSteps[i].value, valueCycling: dataCycling[i].value / 1000 });
   });
 
   return (
-    <div>
+    <div className={`${css.card} ${css.heartCard}`}>
       <div className={css.graphWrapper}>
         <Health2LinesGraph
           data={weeklyData}
@@ -28,7 +28,6 @@ const WeeklySteps = ({ dataSteps = [], dataCycling = [] }) => {
       <div className={css.graphFooter}>
         <div className={css.dataLabel}>
           Weekly walking and cycling distance
-          <span><hr /></span>
         </div>
       </div>
     </div>

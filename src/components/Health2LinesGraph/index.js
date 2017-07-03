@@ -43,6 +43,7 @@ const Health2LinesGraph = ({
       <Line
         yAxisId="left"
         type="monotone"
+        dot={false}
         dataKey={value1}
         stroke={color1}
         fill={color1}
@@ -52,6 +53,7 @@ const Health2LinesGraph = ({
       <Line
         yAxisId="right"
         type="monotone"
+        dot={false}
         dataKey={value2}
         stroke={color2}
         fill={color2}

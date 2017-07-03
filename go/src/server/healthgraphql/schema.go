@@ -66,6 +66,14 @@ var sampleHealthTypeString = graphql.NewObject(graphql.ObjectConfig{
 var sampleHealthTypeMinMax = graphql.NewObject(graphql.ObjectConfig{
 	Name: "SampleMinMax",
 	Fields: graphql.Fields{
+		"startDate": &graphql.Field{
+			Type: graphql.String,
+			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
+				// Type assertion
+				data := p.Source.(health.MinMaxStruct)
+				return data.StartDate, nil
+			},
+		},
 		"min": &graphql.Field{
 			Type: graphql.Float,
 			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
