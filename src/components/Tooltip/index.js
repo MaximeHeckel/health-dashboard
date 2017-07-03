@@ -4,6 +4,7 @@ import moment from 'moment';
 import css from './styles.css';
 
 const CustomTooltip = ({ payload }) => {
+  console.log(payload)
   return (
     <div className={css.wrapper}>
       <div>

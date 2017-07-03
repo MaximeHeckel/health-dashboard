@@ -61,10 +61,18 @@ class DailyHeartRate extends Component {
               data={hrData}
               margin={{ left: 0 }}
             >
+              <defs>
+                <linearGradient id="colorUv" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#FF4A6F" />
+                  <stop offset="25%" stopColor="#FF4A6F" />
+                  <stop offset="50%" stopColor="#FF4A6F" />
+                  <stop offset="100%" stopColor="#FCA9BF" />
+                </linearGradient>
+              </defs>
               <Line
                 type="monotone"
                 dataKey="value"
-                stroke="#FFF"
+                stroke='url(#colorUv)'
                 strokeWidth="3"
                 dot={false}
                 unit="bpm"

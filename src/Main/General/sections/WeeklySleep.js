@@ -39,7 +39,7 @@ const WeeklySleep = ({ dataSleep = [] }) => {
   });
 
   return (
-    <div>
+    <div className={`${css.card} ${css.heartCard}`}>
       <div className={css.graphWrapper}>
         <BarChart width={350} height={120} data={weeklySleep}>
           <YAxis
@@ -60,7 +60,6 @@ const WeeklySleep = ({ dataSleep = [] }) => {
       <div className={css.graphFooter}>
         <div className={css.dataLabel}>
           Weekly sleep hours
-          <span><hr /></span>
         </div>
       </div>
     </div>

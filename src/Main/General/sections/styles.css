@@ -14,7 +14,7 @@
   width: 400px;
   height: 175px;
   box-shadow: 3px 5px 10px 0 rgba(0,0,0,0.16);
-  background-image: linear-gradient(90deg, #FCA9BF 0%, #FF4A6F 100%);
+  background-image: #FAFAFA;
 }
 
 .weightCard {
@@ -53,6 +53,11 @@
 .graphFooter {
   width: 85%;
   margin-top: $space-xs;
+
+  .dataLabel {
+    text-align: center;
+    color: $color-black;
+  }
 }
 
 .hrDataRow {
@@ -64,8 +69,13 @@
 .hrDataItem {
   flex-grow: 1;
   text-align: center;
-  color: $color-white;
+  color: #FF4A6F;
   font-weight: 700;
+
+  .dataLabel {
+    text-align: center;
+    color: #FF4A6F;
+  }
 }
 
 .hrDataItem:not(:last-child) {

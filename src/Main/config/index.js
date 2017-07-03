@@ -20,6 +20,7 @@ export const query = `query HealthData (
       }
     MinMaxHeartRate(date: $date)
       {
+        startDate,
         min,
         max
       }
@@ -61,31 +62,37 @@ export const query = `query HealthData (
       }
     MinMaxHeartRateDate1: MinMaxHeartRate(date: $date1)
       {
+        startDate,
         min,
         max
       }
     MinMaxHeartRateDate2: MinMaxHeartRate(date: $date2)
       {
+        startDate,
         min,
         max
       }
     MinMaxHeartRateDate3: MinMaxHeartRate(date: $date3)
       {
+        startDate,
         min,
         max
       }
     MinMaxHeartRateDate4: MinMaxHeartRate(date: $date4)
       {
+        startDate,
         min,
         max
       }
     MinMaxHeartRateDate5: MinMaxHeartRate(date: $date5)
       {
+        startDate,
         min,
         max
       }
     MinMaxHeartRateDate6: MinMaxHeartRate(date: $date6)
       {
+        startDate,
         min,
         max
       }
