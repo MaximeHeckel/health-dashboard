@@ -16,9 +16,10 @@ COPY . .
 
 ENV GOROOT=/goroot \
     GOPATH=/go \
-    PATH=/goroot/bin:/go/bin/:$PATH
+    PATH=/goroot/bin:/go/bin/:$PATH \
+    NODE_ENV=development
 
-COPY ./go $GOPATH/src/github.com/MaximeHeckel/healthDashboard/go/
+COPY ./go $GOPATH/src/github.com/MaximeHeckel/health-dashboard/go/
 RUN curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.22.0
 
 ENV NPM_CONFIG_LOGLEVEL=warn \
